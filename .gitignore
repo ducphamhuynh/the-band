@@ -1,0 +1,3 @@
+### Add vscode set up folder and workspace file to ignore ###
+.vscode/
+*.code-workspace
