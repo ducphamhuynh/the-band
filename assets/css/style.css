@@ -18,6 +18,7 @@ li {
 /* Common */
 
 .clear {
+    display: block;
     content: '';
     clear: both;
 }
@@ -33,7 +34,7 @@ li {
     clear: both;
 }
 
-.col {
+.col-full {
     width: 100%;
 }
 
@@ -63,6 +64,20 @@ li {
     margin-top: 16px;
 }
 
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.btn-submit {
+    display: block;
+    text-transform: uppercase;
+    font: inherit;
+}
+
 .btn {
     display: inline-block;
     color: #fff;
@@ -71,6 +86,8 @@ li {
     text-decoration: none;
     border: none;
     outline: none;
+    cursor: pointer;
+    font: inherit;
 }
 
 .btn:hover {
@@ -81,8 +98,7 @@ li {
 .pull-right {
     float: right;
 }
-
-
+/* End common properties */
 
 /* Main */
 #header {
@@ -210,12 +226,11 @@ li {
     font-weight: 700;
 }
 
-
 #content .content-section {
     width: 800px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 64px 16px 112px;
+    padding: 64px 16px 96px;
 }
 
 #content .section-heading {
@@ -239,30 +254,16 @@ li {
 }
 
 #content .member-list {
-    padding: 32px 0;
-}
-
-#content .member-list::after {
-    display: block;
-    content: '';
-    clear: both;
-}
-
-#content .member-item {
-    float: left;
-    text-align: center;
+    padding-top: 16px;
 }
 
 #content .member-name {
     margin: 15px 0;
 }
 
-
 #content .member-img {
-    max-width: 100%;
-    max-height: 154px;
+    width: 100%;
     border-radius: 4px;
-    margin-bottom: 16px;
 }
 
 /* Tour section */
@@ -308,14 +309,7 @@ li {
 
 /* Places */
 .places-list {
-    margin-top: 32px;
-    margin-bottom: 48px;
-}
-
-.places-list::after {
-    display: block;
-    content: '';
-    clear: both;
+    margin-top: 16px;
 }
 
 .place-img {
@@ -341,6 +335,29 @@ li {
 
 .place-description {
     padding: 15px 0;
+}
+
+/* Contact section */
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 18px;
+}
+
+.contact-info i {
+    display: inline-block;
+    width: 30px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
 }
 
 .map-section img {
@@ -472,27 +489,6 @@ li {
     color: #2196f3;
 }
 
-/* Contact form*/
-.contact-content {
-    margin-top: 48px;
-}
-
-.contact-info {
-    font-size: 18px;
-}
-
-.contact-info i {
-    display: inline-block;
-    width: 30px;
-}
-
-.contact-form .form-control {
-    padding: 10px;
-    border: 1px solid #ccc;
-    outline: none;
-    width: 100%;
-}
-
 
 /* Keyframes */
 @keyframes modalFadeIn {
@@ -508,6 +504,10 @@ li {
 
 /* Add media query to Mobile responsive */
 @media screen and (max-width: 740px){
+    .s-col-full {
+        width: 100%;
+    }
+    
     #header {
         overflow: hidden;
     }
@@ -546,6 +546,15 @@ li {
         padding: 13px 35px;
     }
 
+    /* Fix the band team in some line instead of one line */
+    .member-list > div.member-item {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #content .member-img {
+        width: 60%;
+    }
 }
 
 /* PC responsive */
