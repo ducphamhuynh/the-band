@@ -45,14 +45,13 @@
 				<div id="mobile-menu" class="mobile-menu-btn">
 					<i class="fas fa-bars"></i>
 				</div>
-				
+
 				<!-- Search button -->
 				<div class="search-btn">
 					<a href="javascript:;">
 						<i class="fas fa-search"></i>
 					</a>
 				</div>
-				
 			</div>
 			<div id="slider">
 				<div class="text-content">
@@ -217,8 +216,8 @@
 										/>
 									</div>
 								</div>
-								<button
-									class="btn btn-submit pull-right mt-16 mb-16">SEND
+								<button class="btn btn-submit pull-right mt-16 mb-16">
+									SEND
 								</button>
 							</form>
 						</div>
@@ -240,7 +239,7 @@
 					<a href="#"><i class="fab fa-linkedin"></i></a>
 				</div>
 				<p class="copyright">Powered by <a href="#">w3.css</a></p>
-			</div>	
+			</div>
 		</div>
 
 		<!-- Modal buy tickets -->
@@ -284,16 +283,16 @@
 	</body>
 
 	<script>
-		const header = document.getElementById('header');
-		const mobileMenu = document.getElementById('mobile-menu');
+		const header = document.getElementById("header");
+		const mobileMenu = document.getElementById("mobile-menu");
 		const menuItems = document.querySelectorAll('#nav > li > a[href*="#"]');
 		let headerHeight = header.clientHeight;
-		
-		mobileMenu.addEventListener('click', showMenu);
+
+		mobileMenu.addEventListener("click", showMenu);
 		function showMenu() {
 			let isClose = header.clientHeight === headerHeight;
 			if (isClose) {
-				header.style.height = 'auto';
+				header.style.height = "auto";
 			} else {
 				header.style.height = null;
 			}
@@ -301,19 +300,19 @@
 
 		for (let i = 0; i < menuItems.length; i++) {
 			let menuItem = menuItems[i];
-			
-			menuItem.onclick = function(event) {
-				let isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+
+			menuItem.onclick = function (event) {
+				let isParentMenu =
+					this.nextElementSibling &&
+					this.nextElementSibling.classList.contains("subnav");
 
 				if (isParentMenu) {
 					event.preventDefault();
 				} else {
-					header.style.height = null
+					header.style.height = null;
 				}
-			}
+			};
 		}
-
-		
 	</script>
 
 	<script>
